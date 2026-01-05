@@ -14,6 +14,41 @@
   
   <!-- CSS local -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Estilos simples para a galeria */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .room-card {
+      text-align: center;
+    }
+    .room-card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .map-container {
+      margin-top: 20px;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,6 +58,7 @@
       <div class="logo">Pousada Praia de Ponta Negra</div>
       <nav class="nav" id="mainNav">
         <a href="#inicio">Início</a>
+        <a href="#galeria">Galeria</a>
         <a href="#acomodacoes">Acomodações</a>
         <a href="#precos">Preços</a>
         <a href="#localizacao">Localização</a>
@@ -43,48 +79,78 @@
     </div>
   </section>
 
+  <!-- Galeria com piscina e praia -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <h2>Galeria</h2>
+      <p>Conheça nossa piscina e a linda Praia de Ponta Negra, a poucos metros da pousada.</p>
+      <div class="gallery">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715698.jpg?k=example-piscina1" alt="Piscina da Pousada Praia de Ponta Negra">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715702.jpg?k=example-piscina2" alt="Área da piscina com vista">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Morro_do_Careca_-_Ponta_Negra_-_Natal_RN.jpg/800px-Morro_do_Careca.jpg" alt="Praia de Ponta Negra com Morro do Careca">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/123456789.jpg?k=example-praia" alt="Praia de Ponta Negra ao pôr do sol">
+      </div>
+    </div>
+  </section>
+
   <!-- Acomodações -->
-  <section id="acomodacoes" class="section">
+  <section id="acomodacoes" class="section bg-light">
     <div class="container">
       <h2>Acomodações</h2>
       <p>Quartos confortáveis com vista para o mar ou jardim, climatizados e com Wi-Fi gratuito.</p>
-      <!-- Aqui você pode adicionar galeria depois -->
+      <div class="rooms-grid">
+        <div class="room-card">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715700.jpg?k=example-quarto1" alt="Quarto duplo confortável">
+          <p>Quarto Duplo/Triplo</p>
+        </div>
+        <div class="room-card">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715701.jpg?k=example-quarto2" alt="Quarto com varanda">
+          <p>Quarto com Varanda</p>
+        </div>
+        <div class="room-card">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/another-quarto.jpg?k=example" alt="Quarto familiar">
+          <p>Quarto Familiar</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Preços -->
-  <section id="precos" class="section bg-light">
+  <section id="precos" class="section">
     <div class="container">
       <h2>Preços</h2>
       <p>Valores atualizados diariamente e <strong>iguais aos da Booking.com</strong>.</p>
       <p>Veja disponibilidade e reserve com segurança:</p>
-      <a href="https://www.booking.com/hotel/br/seu-link-aqui.html" 
+      <a href="https://www.booking.com/hotel/br/pousada-ponta-negra-natal.html" 
          target="_blank" 
          rel="noopener" 
          class="btn btn-booking">
         Ver preços e reservar →
       </a>
-      <p class="small"><em>Última atualização: 04/01/2026</em></p>
+      <p class="small"><em>Última atualização: 05/01/2026</em></p>
     </div>
   </section>
 
-  <!-- Localização -->
-  <section id="localizacao" class="section">
+  <!-- Localização com mapa integrado -->
+  <section id="localizacao" class="section bg-light">
     <div class="container">
       <h2>Localização</h2>
-      <p>Rua XYZ, próximo ao Cemitério de Ponta Negra – Natal/RN</p>
+      <p>Praia de Ponta Negra – Natal/RN</p>
       <p>Distância da praia: 200m | Aeroporto: 25 min</p>
-      <!-- Opcional: embed do Google Maps depois -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.890123456789!2d-35.175123!3d-5.883456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b3aa8b0b0b0b0b%3A0xexample!2sPraia%20de%20Ponta%20Negra!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </div>
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="section bg-light">
+  <section id="contato" class="section">
     <div class="container">
       <h2>Contato</h2>
       
       <div class="social-links">
-        <a href="https://wa.me/5584SEUNUMERO" target="_blank" class="social-btn whatsapp">
+        <a href="https://wa.me/5584987192094" target="_blank" class="social-btn whatsapp">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a href="https://instagram.com/seu_instagram" target="_blank" class="social-btn instagram">
@@ -92,11 +158,27 @@
         </a>
       </div>
 
-      <h3>Ou preencha o formulário:</h3>
+      <h3>Ou preencha o formulário para consulta de disponibilidade:</h3>
       <form id="contactForm" class="contact-form">
         <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
         <input type="tel" id="whatsapp" placeholder="Seu WhatsApp (com DDD)" required>
-        <textarea id="mensagem" placeholder="Ex: datas, número de hóspedes, dúvidas..."></textarea>
+        <input type="date" id="checkin" placeholder="Data de check-in" required>
+        <input type="date" id="checkout" placeholder="Data de check-out" required>
+        <input type="number" id="hospedes" placeholder="Número de hóspedes" min="1" required>
+        <select id="adultos">
+          <option value="">Adultos</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3+</option>
+        </select>
+        <select id="criancas">
+          <option value="">Crianças</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2+</option>
+        </select>
+        <textarea id="mensagem" placeholder="Dúvidas, pedidos especiais ou mensagem..."></textarea>
         <button type="submit" class="btn">Enviar para WhatsApp</button>
       </form>
     </div>
@@ -110,7 +192,7 @@
   </footer>
 
   <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5584SEUNUMERO?text=Olá!%20Gostaria%20de%20saber%20sobre%20disponibilidade%20e%20preços." 
+  <a href="https://wa.me/5584987192094?text=Olá!%20Gostaria%20de%20saber%20sobre%20disponibilidade%20e%20preços." 
      class="whatsapp-float" 
      target="_blank" 
      aria-label="Fale conosco no WhatsApp">
