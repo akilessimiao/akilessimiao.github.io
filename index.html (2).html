@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pousada Praia de Ponta Negra • Natal/RN</title>
+  <meta name="description" content="Aconchego à beira-mar em Ponta Negra, Natal. Diárias com preços iguais aos da Booking.com.">
+  
+  <!-- Fonte limpa -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones (Font Awesome via CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- CSS local -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Menu -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">Pousada Praia de Ponta Negra</div>
+      <nav class="nav" id="mainNav">
+        <a href="#inicio">Início</a>
+        <a href="#acomodacoes">Acomodações</a>
+        <a href="#precos">Preços</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1>Bem-vindo à Ponta Negra</h1>
+      <p>Aconchego, tranquilidade e mar a poucos passos do seu quarto.</p>
+    </div>
+  </section>
+
+  <!-- Acomodações -->
+  <section id="acomodacoes" class="section">
+    <div class="container">
+      <h2>Acomodações</h2>
+      <p>Quartos confortáveis com vista para o mar ou jardim, climatizados e com Wi-Fi gratuito.</p>
+      <!-- Aqui você pode adicionar galeria depois -->
+    </div>
+  </section>
+
+  <!-- Preços -->
+  <section id="precos" class="section bg-light">
+    <div class="container">
+      <h2>Preços</h2>
+      <p>Valores atualizados diariamente e <strong>iguais aos da Booking.com</strong>.</p>
+      <p>Veja disponibilidade e reserve com segurança:</p>
+      <a href="https://www.booking.com/hotel/br/seu-link-aqui.html" 
+         target="_blank" 
+         rel="noopener" 
+         class="btn btn-booking">
+        Ver preços e reservar →
+      </a>
+      <p class="small"><em>Última atualização: 04/01/2026</em></p>
+    </div>
+  </section>
+
+  <!-- Localização -->
+  <section id="localizacao" class="section">
+    <div class="container">
+      <h2>Localização</h2>
+      <p>Rua XYZ, próximo ao Cemitério de Ponta Negra – Natal/RN</p>
+      <p>Distância da praia: 200m | Aeroporto: 25 min</p>
+      <!-- Opcional: embed do Google Maps depois -->
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section bg-light">
+    <div class="container">
+      <h2>Contato</h2>
+      
+      <div class="social-links">
+        <a href="https://wa.me/5584SEUNUMERO" target="_blank" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://instagram.com/seu_instagram" target="_blank" class="social-btn instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
+
+      <h3>Ou preencha o formulário:</h3>
+      <form id="contactForm" class="contact-form">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="tel" id="whatsapp" placeholder="Seu WhatsApp (com DDD)" required>
+        <textarea id="mensagem" placeholder="Ex: datas, número de hóspedes, dúvidas..."></textarea>
+        <button type="submit" class="btn">Enviar para WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Pousada Praia de Ponta Negra – Natal/RN</p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5584SEUNUMERO?text=Olá!%20Gostaria%20de%20saber%20sobre%20disponibilidade%20e%20preços." 
+     class="whatsapp-float" 
+     target="_blank" 
+     aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>
