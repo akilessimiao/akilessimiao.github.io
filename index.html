@@ -16,19 +16,62 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Estilos simples para a galeria */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
+    /* Estilos para o carrossel na galeria */
+    .carousel-container {
+      position: relative;
+      max-width: 100%;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .gallery img {
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+    .carousel-slide img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: block;
     }
+    .carousel-prev, .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 10;
+    }
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+    .carousel-indicators {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    .indicator {
+      width: 12px;
+      height: 12px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .indicator.active {
+      background: white;
+    }
+
+    /* Estilos para quartos (mantido) */
     .rooms-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -41,6 +84,7 @@
     .room-card img {
       width: 100%;
       border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .map-container {
       margin-top: 20px;
@@ -79,36 +123,64 @@
     </div>
   </section>
 
-  <!-- Galeria com piscina e praia -->
-  <section id="galeria" class="section">
+  <!-- Galeria com carrossel (fundo cinza) -->
+  <section id="galeria" class="section bg-light">
     <div class="container">
       <h2>Galeria</h2>
       <p>Conheça nossa piscina e a linda Praia de Ponta Negra, a poucos metros da pousada.</p>
-      <div class="gallery">
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715698.jpg?k=example-piscina1" alt="Piscina da Pousada Praia de Ponta Negra">
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715702.jpg?k=example-piscina2" alt="Área da piscina com vista">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Morro_do_Careca_-_Ponta_Negra_-_Natal_RN.jpg/800px-Morro_do_Careca.jpg" alt="Praia de Ponta Negra com Morro do Careca">
-        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/123456789.jpg?k=example-praia" alt="Praia de Ponta Negra ao pôr do sol">
+      
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <div class="carousel-slide">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/405690575.jpg?k=9d25e73be218e137250bc4d957329f8c36b1583559d783dafbeea00f8ae6ce2d&o=" alt="Piscina da Pousada">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0c/3c/90/14/show-de-bola-essa-area.jpg" alt="Área da piscina">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/480806150.jpg?k=1f74d2d81d023af3a1d98e78b9e2f3388911b51125cd4d623fb504b34122d073&o=" alt="Piscina com vista">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0c/3c/90/3c/piscina-maravilhosa.jpg" alt="Piscina maravilhosa">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/b4/4d/f9/praia-de-ponta-negra.jpg?w=1200&h=-1&s=1" alt="Praia de Ponta Negra com Morro do Careca">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Morro_do_Careca_Natal.jpg" alt="Morro do Careca">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://coralplaza.com.br/wp-content/uploads/2018/02/149279-morro-do-careca-conheca-uma-das-dunas-mais-famosas-do-brasil-1.jpg" alt="Vista do Morro do Careca">
+          </div>
+          <div class="carousel-slide">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/05/2b/c7/51/pousada-lampiao-e-maria.jpg" alt="Pôr do sol na Praia de Ponta Negra">
+          </div>
+        </div>
+        
+        <button class="carousel-prev" id="prev">&#10094;</button>
+        <button class="carousel-next" id="next">&#10095;</button>
+        
+        <div class="carousel-indicators" id="indicators"></div>
       </div>
     </div>
   </section>
 
   <!-- Acomodações -->
-  <section id="acomodacoes" class="section bg-light">
+  <section id="acomodacoes" class="section">
     <div class="container">
       <h2>Acomodações</h2>
       <p>Quartos confortáveis com vista para o mar ou jardim, climatizados e com Wi-Fi gratuito.</p>
       <div class="rooms-grid">
         <div class="room-card">
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715700.jpg?k=example-quarto1" alt="Quarto duplo confortável">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/675171850.jpg?k=93da7c76e8e4edbcd221eb1858ab0ce3dfbaabf07ab994536f3e0f400b6b008a&o=" alt="Quarto confortável">
           <p>Quarto Duplo/Triplo</p>
         </div>
         <div class="room-card">
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/483715701.jpg?k=example-quarto2" alt="Quarto com varanda">
+          <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/b4/f0/e6c95385511e06726d1f5c2cfb79b903c09284c9de960aee8f06192ce16b.jpeg" alt="Quarto amplo">
           <p>Quarto com Varanda</p>
         </div>
         <div class="room-card">
-          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/another-quarto.jpg?k=example" alt="Quarto familiar">
+          <img src="https://images.trvl-media.com/lodging/4000000/3240000/3234900/3234856/w1596h1196x0y0-c132ea90.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Quarto familiar">
           <p>Quarto Familiar</p>
         </div>
       </div>
@@ -116,7 +188,7 @@
   </section>
 
   <!-- Preços -->
-  <section id="precos" class="section">
+  <section id="precos" class="section bg-light">
     <div class="container">
       <h2>Preços</h2>
       <p>Valores atualizados diariamente e <strong>iguais aos da Booking.com</strong>.</p>
@@ -132,7 +204,7 @@
   </section>
 
   <!-- Localização com mapa integrado -->
-  <section id="localizacao" class="section bg-light">
+  <section id="localizacao" class="section">
     <div class="container">
       <h2>Localização</h2>
       <p>Praia de Ponta Negra – Natal/RN</p>
@@ -145,7 +217,7 @@
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="section">
+  <section id="contato" class="section bg-light">
     <div class="container">
       <h2>Contato</h2>
       
@@ -199,7 +271,54 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Scripts -->
+  <!-- Script do carrossel -->
+  <script>
+    const carousel = document.getElementById('carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const indicatorsContainer = document.getElementById('indicators');
+    
+    let currentIndex = 0;
+    
+    // Criar indicadores
+    slides.forEach((_, index) => {
+      const indicator = document.createElement('div');
+      indicator.classList.add('indicator');
+      if (index === 0) indicator.classList.add('active');
+      indicator.addEventListener('click', () => goToSlide(index));
+      indicatorsContainer.appendChild(indicator);
+    });
+    
+    const indicators = document.querySelectorAll('.indicator');
+    
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      indicators.forEach((ind, i) => {
+        ind.classList.toggle('active', i === currentIndex);
+      });
+    }
+    
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+    
+    // Auto-play opcional (comente se não quiser)
+    // setInterval(() => { nextBtn.click(); }, 5000);
+  </script>
+
+  <!-- Script do formulário WhatsApp (se já tiver no js/whatsapp.js, pode remover este) -->
   <script src="js/whatsapp.js"></script>
 </body>
 </html>
