@@ -212,4 +212,61 @@ body {
   .hero-content h1 {
     font-size: 2rem;
   }
+
+  /* Serviços */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  text-align: center;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.service-card .fab.fa-uber {
+  font-size: 60px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin: 15px 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.service-card-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #888;
+}
+.service-card-placeholder span {
+  font-size: 24px;
+}
+.service-card-placeholder p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
 }
