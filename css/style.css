@@ -269,4 +269,13 @@ body {
   font-size: 1rem;
   color: #666;
 }
+  /* Efeito de clique nos cards clicáveis */
+.service-card--clickable {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.service-card--clickable:active {
+  transform: translateY(2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 }
